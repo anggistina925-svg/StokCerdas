@@ -1,59 +1,105 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# StokCerdas
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Sistem Informasi Analisis Persediaan dan Rekomendasi Pengadaan Barang Berbasis Web
 
-## About Laravel
+### Identitas Mahasiswa
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Nama:** Anggistina
+- **NIM:** C2483207011
+- **Semester/Kelas:** V / PTI5&#x20;
+- **Mata Kuliah:** Pemrograman Internet
+- Dosen Pengampu : Taofik Muhammad, M.Kom&#x20;
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 1. Deskripsi Proyek
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+StokCerdas merupakan aplikasi berbasis web yang dibuat menggunakan Laravel untuk membantu pengguna mengelola dan menganalisis persediaan barang. Aplikasi ini menyediakan informasi stok barang, pengelompokan kategori, analisis kondisi persediaan, serta rekomendasi pengadaan barang.
 
-## Learning Laravel
+### 2. Tujuan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- Mempermudah pemantauan persediaan barang.
+- Mengetahui kondisi stok barang.
+- Menghitung stok akhir secara otomatis.
+- Memberikan rekomendasi jumlah pengadaan barang.
+- Membantu menentukan prioritas pembelian barang.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 3. Fitur Aplikasi
 
-## Laravel Sponsors
+1. Dashboard: Menampilkan ringkasan jumlah barang dan kategori.
+2. Data Barang: Menampilkan daftar barang beserta informasi stok dan harga.
+3. Detail Barang: Menampilkan informasi lengkap setiap barang.
+4. Kategori: Mengelompokkan barang berdasarkan kategori.
+5. Analisis Stok: Menghitung stok akhir dan menentukan status persediaan.
+6. Rekomendasi Pengadaan: Menampilkan kebutuhan pembelian dan estimasi biaya.
+7. Tentang: Menampilkan informasi aplikasi.
+8. Panduan: Menampilkan petunjuk penggunaan aplikasi.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 4. Teknologi yang Digunakan
 
-### Premium Partners
+- Laravel
+- PHP
+- HTML
+- CSS
+- Bootstrap
+- Blade Template
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 5. Implementasi MVC
 
-## Contributing
+- **Model:** Data barang disimpan menggunakan array PHP tanpa database.
+- **View:** Menggunakan Blade untuk menampilkan halaman aplikasi.
+- **Controller:** Mengelola data barang, kategori, analisis stok, dan rekomendasi pengadaan.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 6. Logika Perhitungan
 
-## Code of Conduct
+Stok akhir dihitung menggunakan rumus:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Stok Akhir = Stok Awal + Barang Masuk - Barang Keluar
 
-## Security Vulnerabilities
+Status persediaan:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Habis: Stok akhir sama dengan nol.
+- Menipis: Stok akhir di bawah stok minimum.
+- Aman: Stok akhir sama dengan atau di atas stok minimum.
 
-## License
+Jumlah pengadaan:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Kebutuhan Pengadaan = Target Stok - Stok Akhir
+
+Jika hasilnya negatif, kebutuhan pengadaan ditetapkan menjadi nol.
+
+### 7. Cara Menjalankan Aplikasi
+
+1. Clone repository GitHub.
+2. Buka folder proyek melalui terminal.
+3. Jalankan `composer install`.
+4. Jalankan `php artisan serve`.
+5. Buka browser melalui alamat `http://127.0.0.1:8000`.
+
+### 8. Screenshot Aplikasi
+
+Screenshot aplikasi dapat dilihat pada folder `screenshots` yang berisi tampilan:
+
+- Dashboard
+  <img width="943" height="416" alt="Dashboard" src="https://github.com/user-attachments/assets/f7fb69c7-bb2b-4405-9d46-97a4cd0cc22b" />
+
+- Data Barang
+  <img width="863" height="401" alt="Data -Barang" src="https://github.com/user-attachments/assets/f8955f61-059d-4dd5-b665-2f8b482f271d" />
+<img width="917" height="406" alt="Data-Barang" src="https://github.com/user-attachments/assets/c8154a35-3d04-4f71-9591-a0a2ae3fd270" />
+
+- Analisi stok
+<img width="888" height="281" alt="analisis stok" src="https://github.com/user-attachments/assets/8001b5b6-d4cf-42d7-afed-f3d3003f4374" />
+
+- Kategori
+<img width="959" height="468" alt="kategori" src="https://github.com/user-attachments/assets/9b3f0d2b-ee6c-44e1-8169-2b040f0a13fe" />
+
+- Rekomendasi Pengadaan
+<img width="931" height="463" alt="Rekomendasi 1" src="https://github.com/user-attachments/assets/f2fde772-b345-46f8-ba2d-c6fb24de7737" />
+
+- Panduan
+<img width="926" height="464" alt="panduan" src="https://github.com/user-attachments/assets/65c94693-d12f-44ad-b5c0-927a5c44b826" />
+
+
+### 9. Kesimpulan
+
+StokCerdas dibuat sebagai aplikasi pengelolaan persediaan barang berbasis web menggunakan Laravel dengan menerapkan konsep Routing, Controller, Blade, dan MVC. Aplikasi ini membantu pengguna mengetahui kondisi persediaan serta memperoleh rekomendasi pengadaan barang berdasarkan perhitungan stok.
+
+
