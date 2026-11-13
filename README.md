@@ -86,6 +86,8 @@ Screenshot aplikasi dapat dilihat pada folder `screenshots` yang berisi tampilan
 <img width="863" height="401" alt="Data -Barang" src="https://github.com/user-attachments/assets/f8955f61-059d-4dd5-b665-2f8b482f271d" />
 
 - Analisi stok
+<img width="945" height="469" alt="analisi_stok" src="https://github.com/user-attachments/assets/d4f0777d-e707-4e06-a978-3c2e2a68a6ac" />
+
 <img width="888" height="281" alt="analisis stok" src="https://github.com/user-attachments/assets/8001b5b6-d4cf-42d7-afed-f3d3003f4374" />
 
 - Kategori
